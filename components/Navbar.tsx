@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-export default function () {
+export default function Navbar() {
   return (
     <div className="container mx-auto px-8 py-4">
       <nav className="flex justify-between">
