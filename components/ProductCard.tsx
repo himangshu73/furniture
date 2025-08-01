@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 interface Props {
   image: string;
@@ -9,8 +12,20 @@ interface Props {
 }
 
 export default function ProductCard(props: Props) {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="relative w-[250px] group overflow-hidden">
+    <div
+      className="relative w-[250px] group overflow-hidden"
+      onTouchStart={() => {
+        console.log("Touch Start");
+        setIsActive(true);
+      }}
+      onTouchEnd={() => {
+        console.log("Touch End");
+        setTimeout(() => setIsActive(false), 300);
+      }}
+    >
       <div>
         <div className="relative w-[250px] h-[300px]">
           <Image
@@ -32,8 +47,16 @@ export default function ProductCard(props: Props) {
         </div>
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black opacity-0 md:group-hover:opacity-50 active:opacity-50 transition-opacity duration-300"></div>
-        <button className="relative inset-0 bg-white px-8 py-2 text-orange-400 text-sm opacity-0 hover:bg-orange-400 hover:text-white transition-all duration-300 md:group-hover:opacity-100 active:opacity-100">
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
+            isActive ? "opacity-50" : "opacity-0 md:group-hover:opacity-50"
+          }`}
+        ></div>
+        <button
+          className={`relative bg-white px-8 py-2 text-orange-400 text-sm transition-all duration-300 hover:bg-orange-400 hover:text-white ${
+            isActive ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
+          }`}
+        >
           Add to cart
         </button>
       </div>
