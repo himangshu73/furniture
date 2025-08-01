@@ -10,7 +10,7 @@ interface Props {
 
 export default function ProductCard(props: Props) {
   return (
-    <div className="relative w-[250px]">
+    <div className="relative w-[250px] group overflow-hidden">
       <div>
         <div className="relative w-[250px] h-[300px]">
           <Image
@@ -31,8 +31,9 @@ export default function ProductCard(props: Props) {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 flex items-center justify-center transition-opacity duration-300">
-        <button className="bg-white px-8 py-2 text-orange-400 text-sm">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-0 md:group-hover:opacity-50 active:opacity-50 transition-opacity duration-300"></div>
+        <button className="relative inset-0 bg-white px-8 py-2 text-orange-400 text-sm opacity-0 hover:bg-orange-400 hover:text-white transition-all duration-300 md:group-hover:opacity-100 active:opacity-100">
           Add to cart
         </button>
       </div>
