@@ -3,7 +3,7 @@ import { products } from "@/products";
 
 export default function Products() {
   return (
-    <section className="py-12 bg-gay-50">
+    <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -13,7 +13,7 @@ export default function Products() {
             Discover our premium collection of stylish and comfortable furniture
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <ProductCard
               key={product.id}
