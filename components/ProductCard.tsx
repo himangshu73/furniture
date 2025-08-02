@@ -13,18 +13,23 @@ interface Props {
 
 export default function ProductCard(props: Props) {
   const [isActive, setIsActive] = useState(false);
+  let timeoutId: NodeJS.Timeout;
+
+  const handleTouchStart = () => {
+    clearTimeout(timeoutId);
+    setIsActive(true);
+  };
+
+  const handleTouchEnd = () => {
+    timeoutId = setTimeout(() => setIsActive(false), 500);
+  };
 
   return (
     <div
       className="relative w-[250px] group overflow-hidden"
-      onTouchStart={() => {
-        console.log("Touch Start");
-        setIsActive(true);
-      }}
-      onTouchEnd={() => {
-        console.log("Touch End");
-        setTimeout(() => setIsActive(false), 300);
-      }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onMouseLeave={() => setIsActive(false)}
     >
       <div>
         <div className="relative w-[250px] h-[300px]">
@@ -39,9 +44,11 @@ export default function ProductCard(props: Props) {
           <h2 className="text-xl font-bold">{props.name}</h2>
           <p className="text-base text-gray-600">{props.description}</p>
           <div className="flex gap-4">
-            <h3 className="text-lg font-semibold">Rp {props.price}</h3>
+            <h3 className="text-lg font-semibold">
+              Rp {props.price.toLocaleString()}
+            </h3>
             <h4 className="text-base text-gray-400 line-through">
-              Rp {props.standardPrice}
+              Rp {props.standardPrice.toLocaleString()}
             </h4>
           </div>
         </div>
@@ -54,8 +61,11 @@ export default function ProductCard(props: Props) {
         ></div>
         <button
           className={`relative bg-white px-8 py-2 text-orange-400 text-sm transition-all duration-300 hover:bg-orange-400 hover:text-white ${
-            isActive ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
+            isActive
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100"
           }`}
+          onClick={(e) => e.stopPropagation()}
         >
           Add to cart
         </button>
