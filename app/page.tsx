@@ -1,3 +1,4 @@
+import Category from "@/components/Category";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Products from "@/components/Products";
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="">
       <Navbar />
       <Hero />
+      <Category />
       <Products />
     </div>
   );
