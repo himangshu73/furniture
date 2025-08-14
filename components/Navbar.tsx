@@ -14,16 +14,16 @@ export default function Navbar() {
           <Image src="/logo.svg" fill alt="logo" className="object-contain" />
         </div>
         <div className="md:flex gap-8 hidden">
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             Home
           </p>
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             Shop
           </p>
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             About
           </p>
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             Contact
           </p>
         </div>

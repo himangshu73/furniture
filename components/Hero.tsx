@@ -9,6 +9,7 @@ export default function Hero() {
           fill
           alt="wallpaper"
           className="object-cover"
+          priority
         />
         <div className="hidden absolute right-12 bottom-20 md:flex flex-col bg-amber-100 px-8 py-8 items-start gap-4">
           <p className="text-sm tracking-widest">New Arrival</p>
