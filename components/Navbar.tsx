@@ -13,16 +13,49 @@ export default function Navbar() {
         <div className="relative w-[50px] h-[32px]">
           <Image src="/logo.svg" fill alt="logo" className="object-contain" />
         </div>
-        <div className="flex gap-4">
+        <div className="md:flex gap-8 hidden">
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+            Home
+          </p>
+          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
+            Shop
+          </p>
           <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
             About
           </p>
           <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
             Contact
           </p>
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-gray-700">
-            Privacy
-          </p>
+        </div>
+        <div className="md:flex gap-8 hidden">
+          <Image
+            className="cursor-pointer"
+            src="/account.svg"
+            width={22}
+            height={22}
+            alt="account"
+          />
+          <Image
+            className="cursor-pointer"
+            src="/search.svg"
+            width={22}
+            height={22}
+            alt="cart"
+          />
+          <Image
+            className="cursor-pointer"
+            src="/love.svg"
+            width={22}
+            height={22}
+            alt="cart"
+          />
+          <Image
+            className="cursor-pointer"
+            src="/cart.svg"
+            width={22}
+            height={22}
+            alt="cart"
+          />
         </div>
         <button
           title="menu"
@@ -36,13 +69,16 @@ export default function Navbar() {
       {menuOpen && (
         <ul className="md:hidden absolute z-50 right-4 p-4 rounded-xl shadow-lg bg-orange-200 mt-2 w-40 space-y-2 text-center transition duration-300">
           <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+            Home
+          </li>
+          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+            Shop
+          </li>
+          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
             About
           </li>
           <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
             Contact
-          </li>
-          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
-            Privacy
           </li>
         </ul>
       )}
