@@ -10,8 +10,11 @@ export default function Navbar() {
   return (
     <div className="container mx-auto px-8 py-4">
       <nav className="flex justify-between">
-        <div className="relative w-[50px] h-[32px]">
-          <Image src="/logo.svg" fill alt="logo" className="object-contain" />
+        <div className="flex gap-2 items-center">
+          <div className="relative w-[40px] h-[22px]">
+            <Image src="/logo.svg" fill alt="logo" className="object-contain" />
+          </div>
+          <h1 className="hidden md:block text-2xl font-semibold">Furniro</h1>
         </div>
         <div className="md:flex gap-8 hidden">
           <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
@@ -63,7 +66,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
         >
-          {menuOpen ? <IoMdClose size={32} /> : <RxHamburgerMenu size={32} />}
+          {menuOpen ? <IoMdClose size={22} /> : <RxHamburgerMenu size={22} />}
         </button>
       </nav>
       {menuOpen && (
