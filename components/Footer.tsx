@@ -38,7 +38,7 @@ export default function Footer() {
             Returns
           </Link>
           <Link href="" className="font-semibold">
-            Priacy Policy
+            Privacy Policy
           </Link>
         </div>
         <div className="flex flex-col gap-8">
