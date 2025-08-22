@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Inspiration() {
   return (
     <div className="container mx-auto flex bg-gray-50">
@@ -11,8 +13,12 @@ export default function Inspiration() {
           Explore More
         </button>
       </div>
-      <div></div>
-      <div></div>
+      <div className="w-1/3">
+        <Image src="/inner.jpg" width={400} height={580} alt="inner" />
+      </div>
+      <div className="w-1/3">
+        <Image src="/inner1.jpg" width={400} height={580} alt="inner" />
+      </div>
     </div>
   );
 }
