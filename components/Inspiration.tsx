@@ -14,7 +14,12 @@ export default function Inspiration() {
         </button>
       </div>
       <div className="w-full md:w-1/3 items-center px-8">
-        <Image src="/inner.jpg" width={400} height={580} alt="inner" />
+        <div className="relative">
+          <Image src="/inner.jpg" width={400} height={580} alt="inner" />
+          <div className="absolute bottom-5 left-5 z-10 bg-white/70 backdrop-blur-sm px-8 py-8 shadow-lg">
+            <h1 className="text-xl font-semibold">Inner Peace</h1>
+          </div>
+        </div>
       </div>
       <div className="w-full md:w-1/3 items-center px-8">
         <Image src="/inner1.jpg" width={400} height={580} alt="inner" />
