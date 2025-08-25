@@ -21,7 +21,7 @@ export default function Hero() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             <br /> Ut elit tellus, luctus nec ullamcorper mattis.
           </p>
-          <button className="px-8 py-2 text-white font-bold bg-amber-800 hover:bg-amber-700">
+          <button className="px-8 py-2 text-white font-bold bg-amber-800 hover:bg-amber-700 cursor-pointer">
             BUY NOW
           </button>
         </div>

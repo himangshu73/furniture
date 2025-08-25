@@ -21,7 +21,7 @@ export default function Inspiration() {
             <div className="bg-white/70 backdrop-blur-sm px-8 py-8 shadow-lg">
               <h1 className="text-xl font-semibold">Inner Peace</h1>
             </div>
-            <div className="bg-amber-800 p-4 flex items-center cursor-pointer">
+            <div className="bg-amber-800 p-4 flex items-center cursor-pointer hover:bg-amber-700 transition-colors">
               <FaArrowRight size={24} className="text-white" />
             </div>
           </div>

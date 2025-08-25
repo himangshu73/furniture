@@ -12,9 +12,16 @@ export default function Navbar() {
       <nav className="flex justify-between">
         <div className="flex gap-2 items-center">
           <div className="relative w-[40px] h-[22px]">
-            <Image src="/logo.svg" fill alt="logo" className="object-contain" />
+            <Image
+              src="/logo.svg"
+              fill
+              alt="logo"
+              className="object-contain cursor-pointer"
+            />
           </div>
-          <h1 className="hidden md:block text-2xl font-semibold">Furniro</h1>
+          <h1 className="hidden md:block text-2xl font-semibold hover:text-amber-800 cursor-pointer">
+            Furniro
+          </h1>
         </div>
         <div className="md:flex gap-8 hidden">
           <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
