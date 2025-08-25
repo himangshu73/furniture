@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Inspiration() {
   return (
@@ -16,8 +17,13 @@ export default function Inspiration() {
       <div className="w-full md:w-1/3 items-center px-8">
         <div className="relative">
           <Image src="/inner.jpg" width={400} height={580} alt="inner" />
-          <div className="absolute bottom-5 left-5 z-10 bg-white/70 backdrop-blur-sm px-8 py-8 shadow-lg">
-            <h1 className="text-xl font-semibold">Inner Peace</h1>
+          <div className="absolute flex bottom-5 left-5 z-10">
+            <div className="bg-white/70 backdrop-blur-sm px-8 py-8 shadow-lg">
+              <h1 className="text-xl font-semibold">Inner Peace</h1>
+            </div>
+            <div className="bg-amber-800 p-4 flex items-center cursor-pointer">
+              <FaArrowRight size={24} className="text-white" />
+            </div>
           </div>
         </div>
       </div>
