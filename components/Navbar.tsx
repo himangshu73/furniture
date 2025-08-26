@@ -4,13 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="container mx-auto px-8 py-4">
       <nav className="flex justify-between">
-        <div className="flex gap-2 items-center">
+        <Link href="/" className="flex items-center gap-2">
           <div className="relative w-[40px] h-[22px]">
             <Image
               src="/logo.svg"
@@ -22,14 +23,18 @@ export default function Navbar() {
           <h1 className="hidden md:block text-2xl font-semibold hover:text-amber-800 cursor-pointer">
             Furniro
           </h1>
-        </div>
+        </Link>
+
         <div className="md:flex gap-8 hidden">
           <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             Home
           </p>
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
+          <Link
+            href="/shop"
+            className="text-lg cursor-pointer text-gray-900 hover:text-amber-700"
+          >
             Shop
-          </p>
+          </Link>
           <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
             About
           </p>
@@ -78,12 +83,16 @@ export default function Navbar() {
       </nav>
       {menuOpen && (
         <ul className="md:hidden absolute z-50 right-4 p-4 rounded-xl shadow-lg bg-orange-200 mt-2 w-40 space-y-2 text-center transition duration-300">
-          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
-            Home
-          </li>
-          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
-            Shop
-          </li>
+          <Link href="/">
+            <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+              Home
+            </li>
+          </Link>
+          <Link href="/shop">
+            <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+              Shop
+            </li>
+          </Link>
           <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
             About
           </li>
