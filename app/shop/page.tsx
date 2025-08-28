@@ -1,8 +1,22 @@
 import Image from "next/image";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/products";
 
 export default function Shop() {
   return (
     <div className="container mx-auto px-8 py-16 bg-orange-100">
+      <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            image={product.image}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            standardPrice={product.standardPrice}
+          />
+        ))}
+      </div>
       <div className="flex md:flex-row flex-col gap-4 justify-between">
         <div className="flex gap-2">
           <Image src="trophy.svg" width={40} height={40} alt="trophy" />
