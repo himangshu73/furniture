@@ -26,9 +26,12 @@ export default function Navbar() {
         </Link>
 
         <div className="md:flex gap-8 hidden">
-          <p className="text-lg cursor-pointer text-gray-900 hover:text-amber-700">
+          <Link
+            href="/"
+            className="text-lg cursor-pointer text-gray-900 hover:text-amber-700"
+          >
             Home
-          </p>
+          </Link>
           <Link
             href="/shop"
             className="text-lg cursor-pointer text-gray-900 hover:text-amber-700"
@@ -83,22 +86,26 @@ export default function Navbar() {
       </nav>
       {menuOpen && (
         <ul className="md:hidden absolute z-50 right-4 p-4 rounded-xl shadow-lg bg-orange-200 mt-2 w-40 space-y-2 text-center transition duration-300">
-          <Link href="/">
+          <Link href="/" onClick={() => setMenuOpen(false)}>
             <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
               Home
             </li>
           </Link>
-          <Link href="/shop">
+          <Link href="/shop" onClick={() => setMenuOpen(false)}>
             <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
               Shop
             </li>
           </Link>
-          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
-            About
-          </li>
-          <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
-            Contact
-          </li>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>
+            <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+              About
+            </li>
+          </Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}>
+            <li className="hover:bg-orange-300 rounded-lg cursor-pointer px-4 py-2">
+              Contact
+            </li>
+          </Link>
         </ul>
       )}
     </div>

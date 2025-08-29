@@ -4,7 +4,7 @@ import { products } from "@/products";
 
 export default function Shop() {
   return (
-    <div className="container mx-auto px-8 py-16 bg-orange-100">
+    <div className="container mx-auto px-8 py-16">
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <ProductCard
