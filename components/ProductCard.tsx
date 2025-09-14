@@ -8,7 +8,6 @@ interface Props {
   name: string;
   description: string;
   price: number;
-  standardPrice: number;
 }
 
 export default function ProductCard(props: Props) {
@@ -49,9 +48,6 @@ export default function ProductCard(props: Props) {
             <h3 className="text-lg font-semibold">
               Rp {props.price.toLocaleString()}
             </h3>
-            <h4 className="text-base text-gray-400 line-through">
-              Rp {props.standardPrice.toLocaleString()}
-            </h4>
           </div>
         </div>
       </div>
